@@ -2398,7 +2398,21 @@ exports.mergeProps = mergeProps;
 exports.getProps = getProps;
 exports.setRequestHeaders = setRequestHeaders;
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
+function _interopRequireWildcard(obj) {
+  // debugger;
+  if (obj && obj.__esModule) {
+      return obj;
+  } else {
+      var newObj = {};
+      if (obj != null) {
+          for (var key in obj) {
+              if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+          }
+      }
+      newObj['default'] = obj;
+      return newObj;
+  }
+}
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -2453,9 +2467,9 @@ function calendarQuery(options) {
     props: options.props || [],
     filters: options.filters || [],
     timezone: options.timezone
-  }), {
+  }).replace(/,/g,''), {
     depth: options.depth
-  });
+  })
 }
 
 function collectionQuery(requestData, options) {
@@ -2485,7 +2499,7 @@ function collectionQuery(requestData, options) {
  */
 
 function propfind(options) {
-  var requestData = template.propfind({ props: options.props });
+  var requestData = template.propfind({ props: options.props }).replace(/,/g,'');
 
   function transformRequest(xhr) {
     setRequestHeaders(xhr, options);
@@ -7245,12 +7259,12 @@ exports.XMLReader = XMLReader;
 },{}],33:[function(require,module,exports){
 module.exports={
   "name": "dav",
-  "version": "1.7.8",
+  "version": "1.8.1",
   "author": "Gareth Aye [:gaye] <gaye@mozilla.com>",
   "description": "WebDAV, CalDAV, and CardDAV client for nodejs and the browser",
   "license": "MPL-2.0",
   "main": "./dav.js",
-  "repository": "https://github.com/gaye/dav",
+  "repository": "https://github.com/hongchew/dav",
   "keywords": [
     "address book",
     "calendar",

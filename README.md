@@ -1,6 +1,12 @@
 dav
 ===
 
+# Notes/Disclaimers
+This is an unpublished fork of https://github.com/lambdabaa/dav for use in a project.
+Fixes some XML parsing issues with some calendar servers. Cr: Keith (https://github.com/Lexzt)
+
+Please use the original if it does not give you any problems as this repository is unmaintained.
+
 [![Build Status](https://travis-ci.org/lambdabaa/dav.png?branch=master)](https://travis-ci.org/lambdabaa/dav)
 
 WebDAV, CalDAV, and CardDAV client for nodejs and the browser.
